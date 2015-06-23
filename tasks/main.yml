@@ -1,0 +1,12 @@
+---
+- name: ensure eye loads the config
+  command: bash -lc "RAILS_ENV={{ rails_env }} RAILS_ROOT=/home/{{ rails_deploy_user }}/{{ rails_deploy_app_name }} BASE_DIR=/home/{{ rails_deploy_user }}/{{ rails_deploy_app_name }} BUNDLE_GEMFILE=/home/{{ rails_deploy_user }}/{{ rails_deploy_app_name }}/Gemfile bundle exec eye l /home/{{ rails_deploy_user }}/{{ rails_deploy_app_name }}/{{ eye_config_path }}"
+  args:
+    chdir: /home/{{ rails_deploy_user }}/{{ rails_deploy_app_name }}
+  sudo: no
+
+- name: ensure eye restarts
+  command: bash -lc "RAILS_ENV={{ rails_env }} RAILS_ROOT=/home/{{ rails_deploy_user }}/{{ rails_deploy_app_name }} BASE_DIR=/home/{{ rails_deploy_user }}/{{ rails_deploy_app_name }} BUNDLE_GEMFILE=/home/{{ rails_deploy_user }}/{{ rails_deploy_app_name }}/Gemfile bundle exec eye restart all"
+  args:
+    chdir: /home/{{ rails_deploy_user }}/{{ rails_deploy_app_name }}
+  sudo: no
