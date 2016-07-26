@@ -13,14 +13,8 @@ Role Variables
 
 In the current version, you can specify the following variables:
 
-- rails_deploy_user
-- rails_deploy_app_name
-- rails_env
-- eye_force_restart
-- ruby_version
-- gemset
-- eye_config_path
-- rails_deploy_shell_prefix
+- app_path - Path where ruby/rails app is deployed
+- eye_config_path - Config path for eye
 
 Note: There are no default values for the above mentioned variables.
 
