@@ -4,6 +4,7 @@
   args:
     chdir: "{{ app_path }}"
   sudo: no
+  ignore_errors: True
 
 - name: ensure eye loads the config
   command: bash -lc "bundle exec eye l {{ eye_config_path }}"
