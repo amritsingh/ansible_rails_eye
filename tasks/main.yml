@@ -1,13 +1,6 @@
 ---
-- name: stop eye
-  command: bash -lc "bundle exec eye stop all"
-  args:
-    chdir: "{{ app_path }}"
-  sudo: no
-  ignore_errors: True
-
 - name: quit eye
-  command: bash -lc "bundle exec eye quit"
+  command: bash -lc "bundle exec eye quit -s"
   args:
     chdir: "{{ app_path }}"
   sudo: no
