@@ -10,4 +10,7 @@ galaxy_info:
     - all
   categories:
   - web
+  - eye
+  - task-monitor
+  - monitor
 dependencies: []
